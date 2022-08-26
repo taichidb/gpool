@@ -5,8 +5,12 @@ goroutine pool implemented using channel
 ## Example
 
 ```go
-{
-    pool := NewPool(10)
+import (
+    "gopkg.in/taichidb/gpool.v1"
+)
+
+func foobar() {
+    pool := gpool.NewPool(10)
     for i := 0; i < 100; i++ {
         pool.Add(1)
         go func(i int) {
